@@ -1,0 +1,3 @@
+cn\zyy\springcloud\MemberConsumerApplication.class
+cn\zyy\springcloud\config\RestTemplateConfig.class
+cn\zyy\springcloud\controller\MemberConsumerController.class

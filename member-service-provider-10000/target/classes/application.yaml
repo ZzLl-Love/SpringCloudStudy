@@ -1,0 +1,14 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: member-service-provider-10000
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/cloud_study?useSSL=false&useUnicode=true
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #指定mapper.xml 文件的位置
+  type-aliases-package: cn.zyy.springcloud.entity #指定实体类所在的包 ,通过类名直接引用
