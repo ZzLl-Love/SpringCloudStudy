@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: e-commerce-eureka-server-9001
+server:
+  port: 9001
+
+eureka:
+  instance:
+    hostname: eureka9001.com #eureka 服务端自己的名字
+  client:
+    register-with-eureka: false # 不向注册中心注册自己
+    fetch-registry: false # 表明自己就是服务中心，职责是维护服务实例 ，并不需要去检索服务
+    service-url:
+      defaultZone: http://eureka9002.com/eureka/
+

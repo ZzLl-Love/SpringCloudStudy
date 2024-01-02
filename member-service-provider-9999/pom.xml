@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <description>会员服务模块在10000端口监听,是E-Commerce-Center的子模块</description>
-    <artifactId>member-service-provider-10000</artifactId>
+    <description>会员服务模块在9999端口监听,是E-Commerce-Center的子模块</description>
+    <artifactId>member-service-provider-9999</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -21,11 +21,15 @@
     <dependencies>
 
         <!--引入eureka-client 场景启动器starter-->
+<!--        r如下是错误的依赖，会导致服务注册不到服务中心去-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-netflix-eureka-client</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-
         <!--引入自定义的公共模块-->
         <dependency>
             <groupId>cn.zyy</groupId>

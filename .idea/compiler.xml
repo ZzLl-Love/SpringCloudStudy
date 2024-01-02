@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="member-service-consumer-80" />
-        <module name="member-service-provider-10000" />
         <module name="e-commerce-eureka-server-9001" />
+        <module name="member-service-provider-9998" />
+        <module name="member-service-provider-9999" />
+        <module name="e-commerce-eureka-server-9002" />
         <module name="e-commerce-center-common_api" />
       </profile>
     </annotationProcessing>

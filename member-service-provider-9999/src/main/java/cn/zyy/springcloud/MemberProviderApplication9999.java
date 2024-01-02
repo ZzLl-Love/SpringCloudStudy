@@ -2,6 +2,7 @@ package cn.zyy.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Author: Zz
@@ -9,8 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description: 致敬
  */
 @SpringBootApplication
-public class MemberProviderApplication {
+@EnableEurekaClient
+public class MemberProviderApplication9999 {
     public static void main(String[] args) {
-        SpringApplication.run(MemberProviderApplication.class, args);
+        SpringApplication.run(MemberProviderApplication9999.class, args);
     }
 }
