@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: e-commerce-eureka-server-9002
+server:
+  port: 9002
+
+### eureka相关配置
+eureka:
+  instance:
+    hostname: eureka9002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka9001.com/eureka/ #相互注册
+
