@@ -2,7 +2,7 @@ server:
   port: 9999
 spring:
   application:
-    name: member-service-provider-9999
+    name: member-service-provider
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/cloud_study?useSSL=false&useUnicode=true

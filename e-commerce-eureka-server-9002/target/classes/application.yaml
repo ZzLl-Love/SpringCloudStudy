@@ -12,5 +12,5 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka9001.com/eureka/ #相互注册
+      defaultZone: http://eureka9001.com:9001/eureka/ #相互注册
 
