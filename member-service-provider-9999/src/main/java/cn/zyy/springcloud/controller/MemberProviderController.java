@@ -22,9 +22,9 @@ public class MemberProviderController {
 
         Member member = memberService.queryMemberById(id);
         if(member!=null){
-            return Result.success("查询成功", member);
+            return Result.success("member-service-provider-9999 查询成功", member);
         }else{
-            return Result.error("400", "没有查询到用户信息");
+            return Result.error("member-service-provider-9999 code:400", "没有查询到用户信息");
         }
     }
 
@@ -32,16 +32,16 @@ public class MemberProviderController {
     public Result saveMember(@RequestBody Member member){
 
         if(member == null){
-            return Result.error("4002", "请求参数为空");
+            return Result.error("member-service-provider-9999 code:4002", "请求参数为空");
         }
 
         log.info("==P会员服务模块添加的会员信息为:{}  P==", member);
 
         int i = memberService.insertMember(member);
         if(i>0){
-             return Result.success("添加会员信息成功","添加条数为"+i);
+             return Result.success("member-service-provider-9999 code:添加会员信息成功","添加条数为"+i);
         }else {
-             return Result.error("4002", "添加失败");
+             return Result.error("member-service-provider-9999 code: 4002", "添加失败");
         }
     }
 

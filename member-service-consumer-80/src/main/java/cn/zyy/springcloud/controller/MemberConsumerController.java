@@ -22,7 +22,11 @@ public class MemberConsumerController {
     private RestTemplate restTemplate;
 
     // 提供会员服务模块的基础url
-    private static final  String MEMBER_SERVICE_PROVIDER_URL = "http://localhost:9999/member/";
+    //private static final  String MEMBER_SERVICE_PROVIDER_URL = "http://localhost:9999/member/";
+
+    //会员服务模块变化  根据服务名去查找对应的服务的 ip + port
+    //MEMBER-SERVICE-PROVIDER 是Eureka 对外暴露的名称
+    public static  final  String MEMBER_SERVICE_PROVIDER_URL = "http://MEMBER-SERVICE-PROVIDER";
 
 
     //查询会员
@@ -30,10 +34,13 @@ public class MemberConsumerController {
     public Result<Member> getMemberById(@PathVariable("id") String id){
 
         log.info("==C会员消费模块拿到需要查询的id:{}  C==",id);
-        return restTemplate.getForObject(MEMBER_SERVICE_PROVIDER_URL+id, Result.class);
+        //凭借服务方调用的地址
+        String remoteUrl = MEMBER_SERVICE_PROVIDER_URL+"/member/"+id;
+        log.info("请求地址是{}", remoteUrl );
+        return restTemplate.getForObject(remoteUrl, Result.class);
     }
 
-    //添加会员
+    //添加会员 todo 修改会员保存服务 通过eureka 调用服务集群
     @PostMapping("/save")
     public Result<Member> saveMember(@RequestBody Member member){
 
