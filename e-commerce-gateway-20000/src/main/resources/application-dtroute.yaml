@@ -1,0 +1,26 @@
+#配置动态路由
+#文件名： application-dtroute.yaml 网关动态路由配置
+#springboot 多环境文件配置心得
+  #1.多环境文件的命名规则： applicaton-xxx.yml forexample: application--dev.yaml 生产环境
+  #2.激活的配置文件和默认的配置文件中都有某个配置项，激活文件会覆盖掉默认文件
+    # 当激活的配置文件中没有某个配置项，会去默认文件application.yaml中查找
+spring:
+  profiles: dtroute
+  #动态路由配置
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启 Flag that enables DiscoveryClient gateway integration,即启用DiscoveryClient 服务发现
+      routes:
+        #todo 这里为啥书写形式是- id
+        - id: member_route3
+          uri: lb://member-service-provider
+          predicates:
+            #踩坑日记：-[空格]Path  如果写成-Path 则直接报错IllegalArgumentException
+            - Path=/member/**
+        # 保存操作
+        - id: member_route4
+          uri: lib://member-service-provider
+          predicates:
+            - Path=/member/save

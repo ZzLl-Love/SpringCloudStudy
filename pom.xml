@@ -16,6 +16,7 @@
     <module>member-service-provider-9998</module>
     <module>member-service-provider-9999</module>
       <module>member-service-consumer-openfeign-80801</module>
+      <module>e-commerce-gateway-20000</module>
   </modules>
 
   <!--标识时一个父工程，聚合管理其他模块-->
