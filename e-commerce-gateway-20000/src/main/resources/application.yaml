@@ -6,17 +6,17 @@ spring:
   #gatway 配置踩坑记录   path后面直接写“=”，不写":"号
   cloud:
     gateway:
-      routes:  # 配置路由，这里可配置多个路由
+      routes:  # 配置路由，这里可配置多个路由 | 路由定义：它由id + 目标url + 一系列断言 + 过滤器 -》如果断言为 true 则匹配该路由
         - id: member_router01 #路由id 程序员自定义，要求唯一
           #这里是写死的，服务提供方可能是集群这样写不好，看下面的动态路由配置文件，相当于在这个文件上进行优化
           uri: http://localhost:9999 #当断言成功后进行，gateway进行路由，访问的最终地址是uri+ 请求路径
-          predicates:
+          predicates: # 断言，可以有多种形式
             - Path=/member/** #断言 请求路径相匹配就进行路由，否则gateway会返回404错误
         # 配置保存操作
         #请求流程梳理
-          #1. 发起请求： url: http://localhost:20000/member/save
-          #2. 断言  member/save 和断言路径一致 准备路由
-          #3. 路由url  uri+ 请求路径    http://localhost:9999/member/save(拼接后刚好是会员服务方的地址)
+          #1. 【网关地址】： 发起请求： url: http://localhost:20000/member/save
+          #2. 【断言:predicates】  member/save 和断言路径一致 准备路由
+          #3. 路由url = uri+ 请求路径path    http://localhost:9999/member/save(拼接后刚好是会员服务方的地址)
         - id: member_router02 #路由id 程序员自定义，要求唯一
           uri: http://localhost:9999 #当断言成功后进行，gateway进行路由，访问的最终地址是uri+ 请求路径
           predicates:
