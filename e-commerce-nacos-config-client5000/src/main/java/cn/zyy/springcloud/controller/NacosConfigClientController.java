@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description: 致敬
  */
 @RestController
-@RefreshScope  //todo 该注解是什么意思？
+@RefreshScope //该注解 是springCloud 的原生注解，实现配置信息自动刷新
 public class NacosConfigClientController {
 
     @Value("${config.ip}")

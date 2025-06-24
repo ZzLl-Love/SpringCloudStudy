@@ -1,6 +1,5 @@
 server:
   port: 5000
-
 spring:
   application:
     name: e-commerce-nacos-config-client # 这里name 的值为nacos 配置中心的Data Id

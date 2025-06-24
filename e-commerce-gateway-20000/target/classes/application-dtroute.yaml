@@ -15,6 +15,7 @@ spring:
       routes:
         #todo 这里为啥书写形式是- id
         - id: member_route3
+          # lib: 协议名  注册到eureka server 服务名,lib: 后面跟着的必须小写
           uri: lb://member-service-provider
           predicates:
             #踩坑日记：-[空格]Path  如果写成-Path 则直接报错IllegalArgumentException
