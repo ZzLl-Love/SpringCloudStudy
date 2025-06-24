@@ -1,0 +1,13 @@
+配置中心的dataid为  e-commerce-nacos-config-client-dev.yaml
+
+配置步骤：
+    1. 在application.yaml 中指定激活环境为dev  ==》 dev
+    2. bootstrap 中指定配置中心的地址 localhost:8848  ==>e-commerce-nacos-config-client(程序name
+            )  + 文件格式（yaml）
+
+    finally: 最终可以通过两个配置文件拼接出dataid
+
+
+疑问点：
+    在程序中使用@Value("${}")， 怎么就可以获取到配置中心中的配置？
+

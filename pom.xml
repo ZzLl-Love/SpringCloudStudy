@@ -11,15 +11,19 @@
   <modules>
     <module>member-service-consumer-80</module>
     <module>e-commerce-center-common_api</module>
-      <module>e-commerce-eureka-server-9001</module>
+    <module>e-commerce-eureka-server-9001</module>
     <module>e-commerce-eureka-server-9002</module>
     <module>member-service-provider-9998</module>
     <module>member-service-provider-9999</module>
-      <module>member-service-consumer-openfeign-80801</module>
-      <module>e-commerce-gateway-20000</module>
+    <module>member-service-consumer-openfeign-80801</module>
+    <module>e-commerce-gateway-20000</module>
+    <module>member-service-nocas-provider-10004</module>
+    <module>member-service-nocas-provider-10006</module>
+    <module>member-service-nacos-consumer-80</module>
+    <module>e-commerce-nacos-config-client5000</module>
   </modules>
 
-  <!--标识时一个父工程，聚合管理其他模块-->
+  <!--标识是一个父工程，聚合管理其他模块-->
   <packaging>pom</packaging>
 
   <name>E-Commerce-Center Maven Webapp</name>
@@ -44,6 +48,16 @@
   -->
   <dependencyManagement>
     <dependencies>
+
+      <!--父项目中统一加入spring-cloud-alibaba 依赖-->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
       <dependency>
         <!-- 配置sprig-boot 配置-->
         <groupId>org.springframework.boot</groupId>

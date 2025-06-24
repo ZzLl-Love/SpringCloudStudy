@@ -3,14 +3,16 @@ package cn.zyy.springcloud.controller;
 import cn.zyy.springcloud.basic.Result;
 import cn.zyy.springcloud.config.MemberFeignService;
 import cn.zyy.springcloud.entity.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resources;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 @RestController
+@Slf4j
 public class MemberConsumerFeignController {
 
 
@@ -26,4 +28,12 @@ public class MemberConsumerFeignController {
         return result;
     }
 
+
+    @PostMapping("/member/consumer/openfeign/save")
+    public Result<Member> saveMember(@RequestBody Member member){
+
+        Result result = memberFeignService.saveMember(member);
+        log.info("服务提供方返回的结果{}",result);
+        return result;
+    }
 }

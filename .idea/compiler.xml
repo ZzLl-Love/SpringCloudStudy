@@ -10,9 +10,14 @@
         <module name="member-service-provider-9998" />
         <module name="member-service-provider-9999" />
         <module name="e-commerce-eureka-server-9002" />
+        <module name="e-commerce-nacos-config-client5000" />
+        <module name="member-service-nacos-consumer-80" />
         <module name="e-commerce-center-common_api" />
+        <module name="member-service-nocas-provider-10006" />
         <module name="member-service-consumer-80" />
         <module name="member-service-consumer-openfeign-80801" />
+        <module name="member-service-nocas-provider-10004" />
+        <module name="e-commerce-gateway-20000" />
       </profile>
     </annotationProcessing>
   </component>

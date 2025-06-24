@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 /**
- * 向容器中注入RestTemplate 用于消费会员服务模块 发送请求到  提供会员服务模块中
+ * 向容器中注入RestTemplate 用于 消费会员服务模块 发送请求到  提供会员服务模块中
  */
 @Configuration
 public class RestTemplateConfig {

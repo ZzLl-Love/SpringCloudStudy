@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/member")
 @Slf4j
+/**
+ * 服务提供方接口 port:9998
+ * 示例：http://localhost:9998/member/1
+ */
 public class MemberProviderController {
 
     @Autowired

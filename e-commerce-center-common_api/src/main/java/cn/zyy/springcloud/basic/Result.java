@@ -51,6 +51,7 @@ public class Result<T> {
         return result;
     }
 
+
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>(data);
         result.setCode("200");
