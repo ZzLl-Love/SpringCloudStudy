@@ -8,6 +8,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/seata_account_micro_service-10012/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-order-micro-service-10008/pom.xml" />
       </list>
     </option>
   </component>

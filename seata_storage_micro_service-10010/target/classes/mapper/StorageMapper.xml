@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zyy.storage.dao.StorageDao">
+    <resultMap id="BaseResultMap" type="cn.zyy.storage.entity.Storage"><id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="product_id" property="productId" jdbcType="BIGINT"/>
+        <result column="amount" property="amount" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <update id="reduce">
+        update storage set amount = amount-#{nums} where product_id = #{productId}
+    </update>
+
+</mapper>

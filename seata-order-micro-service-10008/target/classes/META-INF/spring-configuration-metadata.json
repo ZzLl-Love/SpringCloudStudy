@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "cn.zyy.order.config.DataSourceProxyConfig",
+      "sourceMethod": "druidDataSource()"
+    },
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "cn.zyy.account.config.DataSourceProxyConfig",
+      "sourceMethod": "druidDataSource()"
+    },
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "cn.zyy.storage.config.DataSourceProxyConfig",
+      "sourceMethod": "druidDataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

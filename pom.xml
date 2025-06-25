@@ -21,6 +21,7 @@
     <module>member-service-nocas-provider-10006</module>
     <module>member-service-nacos-consumer-80</module>
     <module>e-commerce-nacos-config-client5000</module>
+    <module>seata_storage_micro_service-10010</module>
   </modules>
 
   <!--标识是一个父工程，聚合管理其他模块-->
